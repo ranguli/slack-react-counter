@@ -7,6 +7,7 @@ import emoji
 
 SLACK_API_TOKEN = config("SLACK_API_TOKEN")
 
+
 def get_channels():
 
     channels = []
@@ -25,6 +26,7 @@ def get_channels():
 
     return channels
 
+
 def main():
     reaction_counter = {}
     message_count = 0
@@ -32,7 +34,7 @@ def main():
 
     channels = get_channels()
     for channel in channels:
-        
+
         print("Working on channel " + channel)
 
         # How far back do we want to go
@@ -87,5 +89,6 @@ def main():
         + str(reacted_message_count / message_count * 100)
         + "%)"
     )
+
 
 main()
